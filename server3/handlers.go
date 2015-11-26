@@ -78,6 +78,7 @@ vars := mux.Vars(r)
     res2B, _ :=json.Marshal(newMap)
     w.Header().Set("Content-Type", "application/json;")
     w.WriteHeader(200)
-    fmt.Fprintf(w,"%s",res2B)
+    fmt.Println(res2B)
+    fmt.Fprintf(w,"%s","200")
 
 }

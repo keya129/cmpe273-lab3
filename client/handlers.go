@@ -93,16 +93,11 @@ vars := mux.Vars(r)
 	defer resp.Body.Close()
 	fmt.Println("response Status:", resp.Status)
 	fmt.Println("response Headers:", resp.Header)
-	var dat HashVal
-	body, _ := ioutil.ReadAll(resp.Body)
-    err = json.Unmarshal(body, &dat);
-    if err != nil {
-  	panic(err)
-    }
-    res21B, _ :=json.Marshal(dat)
     w.Header().Set("Content-Type", "application/json;")
     w.WriteHeader(200)
-    fmt.Fprintf(w,"%s",res21B)
+    //fmt.Fprintf(w,"%s",res21B)
+    fmt.Fprintf(w,"%s","200")
+
 
 }
 func KeysAdd(){
